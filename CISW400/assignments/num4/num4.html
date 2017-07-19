@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Assignment 4: Slideshow</title>
+<script language="javaScript">
+
+var photos= new Array("images/img1_google.GIF","images/img2_wiki.GIF","images/img3_crc.GIF");
+var URLs= new Array("crc.losrios.edu","google.com","wikipedia.org");
+var x=0;
+
+function newLocation(){
+	document.location.href="https://www."+URLs[x];
+}
+
+function rotate(){
+	document.banner.src=photos[x];
+	setTimeout("rotate()",5000);
+	x=x+1;
+	if(x>=3){x=0;}
+}
+
+</script>
+</head>
+
+<BODY onLoad="rotate()">
+<body>
+<h1>Darren Yeung @ CRC</h1>
+<h2>CISW400 JavaScript Assignment 4: Slideshow</h2>
+
+<a href="javascript:newLocation();">
+	<img src="images/img1_google.GIF" name="banner">
+</a>
+
+</body>
+</html>

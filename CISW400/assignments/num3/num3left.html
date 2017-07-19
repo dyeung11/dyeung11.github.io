@@ -1,0 +1,121 @@
+<html>
+<title>Assignment 3-Browser Detect Darren Yeung</title>
+<head>
+<script language="javaScript">
+ua=navigator.userAgent;
+
+fox=ua.match(/Firefox/g);
+ie=ua.match(/Trident/g); 
+chrome=ua.match(/Chrome/g);
+saf=ua.match(/Safari/g);
+
+if(fox){
+	document.write("<body style='background-color:yellow'>")
+	document.write("<font color='black'>");
+	browser_name='Firefox';
+
+	pos=ua.indexOf("Firefox")+8;
+	ver=ua.substr(pos,4);
+	browser_name+=" "+ver;
+}
+else if(ie){
+	document.write("<body style='background-color:navy'>")
+	document.write("<font color='white'>");
+	browser_name='MSIE';
+
+	pos=ua.indexOf("Trident")+8;
+	ver=ua.substr(pos,3);
+	browser_name+=" "+ver;
+}
+else if(chrome){
+	document.write("<body style='background-color:green'>")
+	document.write("<font color='red'>");
+	browser_name='Chrome';
+
+	pos=ua.indexOf("Chrome")+8;
+	ver=ua.substr(pos,3);
+	browser_name+=" "+ver;
+}
+else if(saf){
+	document.write("<body style='background-color:gray'>")
+	document.write("<font color='blue'>");
+	browser_name='Safari';
+
+	pos=ua.indexOf("Safari")+8;
+	ver=ua.substr(pos,3);
+	browser_name+=" "+ver;
+}
+
+function change(y)
+{
+	if(y==1){parent.right.location="https://www.microsoft.com/en-us/download/internet-explorer.aspx";}
+	if(y==2){parent.right.location="https://www.mozilla.org/en-US/firefox/new/";}
+	if(y==3){parent.right.location="https://www.google.com/chrome/browser/desktop/index.html";}
+	if(y==4){parent.right.location="https://support.apple.com/downloads/safari.htm";}
+}
+
+function changeList(x)
+{
+	//if(x==){
+	//	document.getElementById("list").innerHTML="<ul>"+
+	//		"<li><a href='javascript:change(ie);javascript:changeList(ie)'>Internet Explorer</a> - Microsoft Internet Explorer </li>"+
+	//		"<li><a href='javascript:change(firefox);javascript:changeList(firefox)'>Firefox</a> - Mozilla Firefox</li>"+
+	//		"<li><a href='javascript:change(chrome);javascript:changeList(chrome)'>Chrome</a> - Google Chrome</li>"+
+	//		"<li><a href='javascript:change(safari);javascript:changeList(safari)'>Safari</a> - Macintosh Safari</li>"+
+	//		"</ul>"}
+	if(x==1){
+		document.getElementById("list").innerHTML="<ul>"+
+			"<li>Internet Explorer - Microsoft Internet Explorer </li>"+
+			"<li><a href='javascript:change(2);javascript:changeList(2)'>Firefox</a> - Mozilla Firefox</li>"+
+			"<li><a href='javascript:change(3);javascript:changeList(3)'>Chrome</a> - Google Chrome</li>"+
+			"<li><a href='javascript:change(4);javascript:changeList(4)'>Safari</a> - Macintosh Safari</li>"+
+			"</ul>"}
+	if(x==2){
+		document.getElementById("list").innerHTML="<ul>"+
+			"<li><a href='javascript:change(1);javascript:changeList(1)'>Internet Explorer</a> - Microsoft Internet Explorer </li>"+
+			"<li>Firefox - Mozilla Firefox</li>"+
+			"<li><a href='javascript:change(3);javascript:changeList(3)'>Chrome</a> - Google Chrome</li>"+
+			"<li><a href='javascript:change(4);javascript:changeList(4)'>Safari</a> - Macintosh Safari</li>"+
+			"</ul>"}
+	if(x==3){
+		document.getElementById("list").innerHTML="<ul>"+
+			"<li><a href='javascript:change(1);javascript:changeList(1)'>Internet Explorer</a> - Microsoft Internet Explorer </li>"+
+			"<li><a href='javascript:change(2);javascript:changeList(2)'>Firefox</a> - Mozilla Firefox</li>"+
+			"<li>Chrome - Google Chrome</li>"+
+			"<li><a href='javascript:change(4);javascript:changeList(4)'>Safari</a> - Macintosh Safari</li>"+
+			"</ul>"}
+	if(x==4){
+		document.getElementById("list").innerHTML="<ul>"+
+			"<li><a href='javascript:change(1);javascript:changeList(1)'>Internet Explorer</a> - Microsoft Internet Explorer </li>"+
+			"<li><a href='javascript:change(2);javascript:changeList(2)'>Firefox</a> - Mozilla Firefox</li>"+
+			"<li><a href='javascript:change(3);javascript:changeList(3)'>Chrome</a> - Google Chrome</li>"+
+			"<li>Safari - Macintosh Safari</li>"+
+			"</ul>"}
+}
+
+</script>
+</head>
+<body>
+<h1>Darren Yeung @ CRC</h1>
+<h2>Assignment 3: Browser and Feauture Detection</h2>
+<a>You are currently using: </a><b id=browser></b>
+<script>
+document.getElementById("browser").innerHTML=browser_name;
+</script>
+<hr></hr>
+<h2>BROWSER DOWNLOADS:</h2>
+<div id="list">
+<ul>
+<li><a href="javascript:change(1);javascript:changeList(1)">
+Internet Explorer</a> - Microsoft Internet Explorer </li>
+<li><a href="javascript:change(2);javascript:changeList(2)">
+Firefox</a> - Mozilla Firefox</li>
+<li><a href="javascript:change(3);javascript:changeList(3)">
+Chrome</a> - Google Chrome</li>
+<li><a href="javascript:change(4);javascript:changeList(4)">
+Safari</a> - Macintosh Safari</li>
+</ul>
+</div>
+</body>
+</font>
+</html>

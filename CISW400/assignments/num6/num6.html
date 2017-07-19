@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Assignment 6: Travel Page DHTML</title>
+<script type="text/javascript" language="javascript" src="num6.js"></script>
+</head>
+
+<body>
+	<h1>Travel Net</h1>
+	<h2>Darren Yeung CISW400 Assignment 6</h2>
+	<hr>
+	<p>Select Destination:</p>
+	
+	<img name="one" src=images/lasvegas/a.JPG 
+		style="position:absolute; width:60px; height:50px; left:200px; top:150px; border:medium inset white"
+		onMouseOver="document.bp.src=one.src">
+	<img name="two" src=images/lasvegas/b.JPG
+		style="position:absolute; width:60px; height:50px; left:280px; top:150px; border:medium inset white"
+		onMouseOver="document.bp.src=two.src">
+	<img name="three" src=images/lasvegas/c.JPG 
+		style="position:absolute; width:60px; height:50px; left:360px; top:150px; border:medium inset white"
+		onMouseOver="document.bp.src=three.src">
+ 	<img name="four" src=images/lasvegas/d.JPG
+		style="position:absolute; width:60px; height:50px; left:440px; top:150px; border:medium inset white"
+		onMouseOver="document.bp.src=four.src">
+	<img name="five" src=images/lasvegas/e.JPG 
+		style="position:absolute; width:60px; height:50px; left:520px; top:150px; border:medium inset white"		 
+		onMouseOver="document.bp.src=five.src">
+	<img name="bp" src=images/lasvegas/a.JPG style="position:absolute; width:240px; height:200px; left:50px; top:250px; border:medium inset gold">
+
+	<form id="f1">
+		<select id="s1" multiple size="3" onChange="changePix()">
+			<option value="Las Vegas" selected>Las Vegas<br>
+			<option value="Cancun">Cancun<br>
+			<option value="Hawaii">Hawaii<br>
+		</select>
+	</form>
+
+</body>
+</html>

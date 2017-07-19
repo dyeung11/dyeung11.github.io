@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>Darren Yeung CISW400 Skin Saver</title>
+
+<script language="javascript" type="text/javascript">
+
+expireDate=new Date();
+expireDate.setMonth(expireDate.getMonth()+6);
+
+var skin="";
+var myRegExp=/;/g;
+
+if(document.cookie!=""){
+	skin=document.cookie.split("=")[1];
+	semi=skin.search(myRegExp);
+	if(semi!=-1){
+		skin=skin.substring(0,semi);
+	}
+}
+
+function setCookie(){
+	skin=document.f.s.value;
+	if(skin=='wood'||skin=='water'||skin=='fire'||skin=='space'){
+		document.cookie="skin="+skin+";expires="+expireDate.toGMTString();	
+	}
+	else{
+		alert('Not Valid Skin');
+	}
+}
+function checkEnter(){
+	if(window.event.keyCode==13){
+		setCookie();
+		changeBG();
+	}
+}
+
+function changeBG(){
+	if(skin=="fire")
+		document.body.background="images/fire_bg.JPG"
+	else if (skin=="water")
+		document.body.background="images/water_bg.JPG"
+	else if (skin=="wood")
+		document.body.background="images/wood_bg.JPG"
+	else if (skin=="space")
+		document.body.background="images/space_bg.JPG"
+	if(skin=='wood'||skin=='water'||skin=='fire'||skin=='space'){
+		document.getElementById("skin").innerHTML=skin.toString();
+	}
+}
+</script>
+
+</head>
+
+<body style="color:white">
+<h3><span style="background-color:black">[My Settings]</span></h3>
+<hr><br><br>
+<center><h1><span style="background-color:black">User Preferences</span></h1>
+<h2><span style="background-color:black">Skin:<b id="skin">None</b></span></h2>
+<br>
+<form name="f">
+	<h3><span style="background-color:black"><b>Change Skin:</b>
+	<input type="text" name="s" onKeyDown="javascript:checkEnter()">
+	(Styles include: <b>water, wood, fire, space</b>)
+	<br><br>
+	<input type="button" value="SAVE" onClick="javascript:setCookie();javascript:changeBG()">
+	</span>
+	</h3>
+</form>
+<script>
+changeBG();
+</script>
+</body>
+</html>

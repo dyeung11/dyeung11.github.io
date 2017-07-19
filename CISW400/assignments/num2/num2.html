@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Assignment 2: Rollover</title>
+<script language="javaScript">
+
+if(document.images){
+var dice1=new Image();
+var dice2=new Image();
+var dice3=new Image();
+
+var ihire1=new Image();
+var ihire2=new Image();
+var ihire3=new Image();
+
+var lin1=new Image();
+var lin2=new Image();
+var lin3=new Image();
+
+var crc1=new Image();
+var crc2=new Image();
+
+
+dice1.src="images/dice.gif";
+dice2.src="images/dice2.gif";
+dice3.src="images/dicetext.gif";
+
+ihire1.src="images/iht.gif";
+ihire2.src="images/iht2.gif";
+ihire3.src="images/ihttext.gif";
+
+lin1.src="images/lin.gif";
+lin2.src="images/lin2.gif";
+lin3.src="images/lintext.gif";
+
+crc1.src="images/crc.gif";
+crc2.src="images/crc2.gif";
+
+}
+
+
+</script>
+</head>
+
+<body>
+<h1>Darren Yeung @ CRC</h1>
+<h2>CISW400 JavaScript Spring 2017 Fishman</h2>
+<hr></hr>
+
+<a href="https://www.dice.com"
+onMouseOver="document.dice_button.src=dice3.src;document.ihire_button.src=ihire2.src;document.lin_button.src=lin2.src;"
+onMouseOut="document.dice_button.src=dice1.src;document.ihire_button.src=ihire1.src;document.lin_button.src=lin1.src;">
+<img name="dice_button" border="1" src="images/dice.gif" height="100" width="200">
+</a>
+<br></br>
+<a href="https://www.ihiretechnology.com"
+onmouseover="document.ihire_button.src=ihire3.src;document.dice_button.src=dice2.src;document.lin_button.src=lin2.src;"
+onMouseOut="document.dice_button.src=dice1.src;document.ihire_button.src=ihire1.src;document.lin_button.src=lin1.src;">
+<img name="ihire_button" border="1" SRC="images/iht.gif" height="100" width="200">
+</a>
+<br></br>
+<a href="https://www.linkedin.com"
+onMouseOver="document.lin_button.src=lin3.src;document.dice_button.src=dice2.src;document.ihire_button.src=ihire2.src;"
+onMouseOut="document.dice_button.src=dice1.src;document.ihire_button.src=ihire1.src;document.lin_button.src=lin1.src;">
+<img name="lin_button" border="1" src="images/lin.gif" height="100" width="200">
+</a>
+<br></br>
+<a href="https://crc.losrios.edu"
+onMouseOver="document.crc_button.src=crc2.src"
+onMouseOut="document.crc_button.src=crc1.src">
+<img name="crc_button" border="1" src="images/crc.gif" height="150" width="300">
+</a>
+<p id="here"></p>
+<script>document.getElementById("here").innerHTML=marked;</script>
+</body>
+</html>

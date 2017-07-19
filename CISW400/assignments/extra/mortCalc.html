@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Mortgage Calculator</title>
+<script language="javascript">
+function calculate(){
+	P=f1.loan.value;
+	R=f1.interest.value;
+	N=f1.years.value;
+	MP=f1.month.value;
+
+    if (P==""||R==""||N=="") { 
+        document.getElementById("month").value ="NULL";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("month").value = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "mortCalc.php?p="+P+"&r="+R+"&n="+N, true);
+        xmlhttp.send();
+    }
+}
+/*	//JavaScript method of calculation.
+	P=f1.loan.value;
+	R=f1.interest.value;
+	N=f1.years.value;
+	MP=f1.month.value;
+	M=(R/100)/12;
+	T=N*12;
+	MP=Math.floor((P*M)/(1-Math.pow((1+M),(-1*T)))*100)/100;
+*/
+</script>
+</head>
+
+<body>
+<h1>Darren Yeung CISW400</h1>
+<h2>Extra Credit: Mortgage Calculator</h2>
+<form name="f1">
+<br><b>Loan Amount $</b>
+<input type="number" name="loan" id="city" size="18"></br>
+<br><b>Annual Interest Rate</b>
+<input type="number" name="interest" id="state"><b>%</b></br>
+<br><b>Loan Term (in years)</b>
+<input type="number" name="years"><b>Years</b></br>
+<br><input type="button" value="Submit" onClick="javascript:calculate()"></br>
+<br><b>Monthly Payment $</b>
+<input type="text" name="month" id="month" readonly="readonly"></br>
+</form>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Assignment 5: Smart Form</title>
+<script language="javascript">
+
+//
+<!--
+var city_valid,state_valid,zip_valid,email_valid=0;
+
+function start_form(){
+	document.getElementById("city").focus();
+}
+
+function check_city(){
+	ci=f1.city.value;
+	if(ci.length==""){alert("Enter a city.");city_valid=0;f1.city.focus();}
+	else if(/\d/.test(ci)){alert("City not valid. Please try again.");city_valid=0;f1.city.focus();}
+	else{ci=ci.toUpperCase();city_valid=1;document.getElementById("city").value=ci.toUpperCase();}
+}
+
+function check_state(){
+	st=f1.state.value;
+	if(st.length==""){alert("Enter a state.");state_valid=0;f1.state.focus();}
+	else if(!(((st.charCodeAt('0')>=65 && st.charCodeAt('0')<=90)||(st.charCodeAt('0')>=97 && st.charCodeAt('0')<=122)) 
+&& ((st.charCodeAt('1')>=65 && st.charCodeAt('1')<=90)||(st.charCodeAt('1')>=97 && st.charCodeAt('1')<=122))&&st.length<3)){
+		state_valid=0;
+		alert("State not valid. Please try again.");
+		f1.state.focus();
+	}
+	else{st=st.toUpperCase();document.getElementById("state").value=st;state_valid=1;}
+	
+
+}
+
+function check_zip(){
+	zi=f1.zip.value;
+	if(zi.length==""){alert("Enter a zip code.");zip_valid=0;f1.zip.focus();}
+	else if(isNaN(zi)||(zi.length!=5)){
+		zip_valid=0;
+		alert("Zip code not valid. Please try again.");
+		f1.zip.focus();
+	}
+	else if(zi==95758||zi==95624){document.getElementById("city").value="ELK GROVE";document.getElementById("state").value="CA";zip_valid=1;}
+	else{zip_valid=1;}
+}
+
+function check_email(){
+	em=f1.email.value;
+	at_sign=em.search(/@/);
+	if(em.length==""){alert("Enter an e-mail address.");email_valid=0;f1.email.focus();}
+	else if((at_sign<1)||(em.length<3)){
+		email_valid=0;
+		alert("E-mail not valid. Please try again.");
+		f1.email.focus();
+	}
+	else{email_valid=1;}
+	
+}
+
+
+function check(){
+	check_city();
+	check_state();
+	check_zip();
+	check_email();
+
+	if((city_valid&&state_valid&&zip_valid&&email_valid)){change();}
+	else{alert("Please fix any errors.");}
+}
+
+function change(){
+	document.getElementById("form").innerHTML="<b>Thank you. We received this information:</b><p>Location: "+ci+", "+st+", "+zi+".</p><p>E-mail: "+em+"</p>";
+}
+-->
+</script>
+</head>
+
+<body onLoad="javascript:start_form();">
+<h1>Darren Yeung @ CRC</h1>
+<h2>Assignment 5: Smart Form</h2>
+<div id="form">
+<form name="f1">
+<br><b>City</b>
+<input type="text" name="city" id="city" size="18" onChange="javascript:check_city()"></br>
+<br><b>State</b>
+<input type="text" name="state" id="state" size="2" onChange="javascript:check_state()"></br>
+<br><b>Zip Code</b>
+<input type="text" name="zip" size="5" onChange="javascript:check_zip()"></br>
+<br><b>E-mail</b>
+<input type="text" name="email" size="20" onChange="javascript:check_email()"></br>
+<br><input type="button" value="Submit" onLoad="javascript:start_form()" onClick="javascript:check()"></br>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Assignment 5: Smart Form</title>
+<script language="javascript">
+
+function check_city(){
+	ci=f1.city.value;
+	if(ci.length==""){alert("Enter a city.")}
+}
+
+function check_state(){
+	st=f1.state.value;
+	if(st.length==""){alert("Enter a state.")}
+	if(!(((st.charCodeAt('0')>=65 && st.charCodeAt('0')<=90)||(st.charCodeAt('0')>=97 && st.charCodeAt('0')<=122)) 
+&& ((st.charCodeAt('1')>=65 && st.charCodeAt('1')<=90)||(st.charCodeAt('1')>=97 && st.charCodeAt('1')<=122))&&st.length<3)){
+		not_valid=1;
+		alert("State not valid. Please try again.")
+	}
+	else{st=st.toUpperCase();document.getElementById("state").value=st;}
+	
+
+}
+
+function check_zip(){
+	zi=f1.zip.value;
+	if(zi.length==""){alert("Enter a zip code.")}
+	if(isNaN(zi)||(zi.length!=5)){
+		not_valid=1;
+		alert("Zip code not valid. Please try again.");
+	}
+}
+
+function check_email(){
+	em=f1.email.value;
+	at_sign=em.search(/@/);
+	if((at_sign<1)||(em.length<3)){
+		not_valid=1;
+		alert("E-mail not valid. Please try again.");
+	}
+	if(em.length==""){alert("Enter an e-mail address.")}
+}
+
+
+function check(){
+	check_city();
+	check_state();
+	check_zip();
+	check_email();
+
+}
+
+</script>
+</head>
+
+<body>
+<h1>Darren Yeung @ CRC</h1>
+<h2>Assignment 5: Smart Form</h2>
+
+
+</body>
+</html>
