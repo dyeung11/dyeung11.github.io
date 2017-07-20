@@ -19,23 +19,8 @@
     codeUrl: "Release/Games.js",
     memUrl: "Release/Games.mem",
     
-  };</script>
-
-  
-<script src="Release/UnityLoader.js"></script>
-
-</body>
-</html>
-<script>
-/**
-   * Created by
-   * Matteo Bicocchi @pupunzi
-   * Pietro Polsinelli @ppolsinelli
-   * Follow us as we are creating a game on #football 
-   * with a story: "Football Voodoom" :-)
-   * */
-
-  var appName = "<b>" + Module.codeUrl.replace("Release/", "").replace(".js","") + "</b> ";
+  };
+var appName = "<b>" + Module.codeUrl.replace("Release/", "").replace(".js","") + "</b> ";
   var canvas = document.getElementsByTagName("canvas")[0];
   var canvasRect = canvas.getBoundingClientRect();
 
@@ -69,7 +54,7 @@
   var dotCount = 0;
   var checkDisplay = setInterval(function(){
 
-    if(Module.progress > 0) {
+    if(Module.progress.progress > 0) {
       loader.style.display="none";
       clearInterval(checkDisplay);
     } else {
@@ -84,3 +69,9 @@
     }
   },100)
 </script>
+
+  
+<script src="Release/UnityLoader.js"></script>
+
+</body>
+</html>
