@@ -1,0 +1,115 @@
+/*Master CSS file for all the pages. Even the tutorial pages use it by traversing back to the root directory.
+This CSS also contains the wrapper id and the news class. Further information will be provided
+at the corresponding area.*/
+
+/*Everything in block display.*/
+header, nav, main, footer, aside, label, input { display: block; }
+* { box-sizing: border-box;}
+
+body {background-color: #ffffff; }
+/*Sets font family, bg color is for the news and side nav background.
+Width adjusts to the window.*/
+#wrapper { background-color: #eeeeee;
+             color: #000000;
+			 width:auto;
+             font-family: Verdana, Arial, sans-serif; }
+/*Sets the header with a non-repeating image. Sets a big header with a border.*/
+header { background-color: #4FBEB2;
+         background-image: url(studentlogo.jpg);
+		 background-position: right;
+		 background-repeat: no-repeat;
+         height: 120px;
+         color: #ADEEE7;
+         text-align: right;
+		 /*Padding shorthand. Top bottom=0, Left Right= 20px*/
+         padding: 0 20px;
+         border-bottom: 2px solid #000000; }	
+/*Setting aside for the right side division for the news column.*/	 
+aside { float: right;
+        width: 200px; }
+/*Sets the margin and padding to make it seem in the center.
+Setting font black and bg color white.
+Margin Shorthand. Top, Right, Bottom, left*/
+main { margin: 0 210px 0 0px;
+        padding: 1px 10px 20px 100px;
+        background-color: #ffffff;
+        color: #000000; }
+/*If role is tutorial, set the margin on the left to 160px for the hashjump navigation.*/
+main[role="tutorial"]{margin:0 210px 0 160px;}
+/*If it's contact, the margins are not needed since it's just a box model.*/
+main[role="contact"]{margin: 0 0 0 0;}
+/*Smart form format. Makes the labels on the left so it's next to input.*/
+label{float:left;
+	width:8em;
+	padding-right:1em;}
+input{display:block;
+	margin-bottom:1em;}
+textarea{margin-bottom:1em;}
+/*Smaller font size and centered in the whole webpage. Bordered and also some padding.
+Clears floating elements near it so that it won't float in the middle.*/
+footer { font-size: .70em;
+         text-align: center;
+         color: #000184;
+         background-color: #78D8CD;
+         padding-top: 10px;
+	 padding-bottom: 10px;
+	 clear:both;
+	 border: 1px solid #000184 }		
+/*Eliminating top margin and adding text shadow and setting it to start from the left.*/ 
+h1 { margin-top:0;
+     font-size: 3em;
+     text-align: left;
+     text-shadow: 2px 2px 2px #000000; }
+/*Makes all lists get rid of the bullet points.*/
+nav ul{list-style-type: none;}	
+/*All navigation will have no text decoration.*/
+nav a{text-decoration:none;}
+/*All navigator links will default to one color, change to another color if visited, and will change white when hovered upon and black when clicked.*/
+nav a:link{color:#179184;}
+nav a:visited{color:#344873;}
+nav a:hover{color:#FFFFFF;} 
+nav a:active { color: #000000;}
+/*The main navigator found in all pages.
+It's in the center of the webpage, in bold, with some padding. */
+nav[role="center"]{text-align:center;
+	font-weight: bold;
+	padding:0.5em;
+	background-color: #78D8CD;}
+/*Increase padding for the link elements so it's easier to click.*/
+nav[role="center"] a{padding:1em;}
+/*Display them in a line.*/
+nav[role="center"] li{display:inline-block;}
+/*Resets the ul margins so it's more compact.*/
+nav[role="center"] ul{margin:0;padding-left:0;}
+/*If it's the tutorial banner, make it float to the left with a fixed position
+so that it follows the user.*/
+nav[role="banner"] { float: left; padding-right:25px; margin-left:-5px;
+      width: auto; position:fixed; text-align:left;}
+/*Space it out by 20px so that it is past the header and nav.*/
+nav[role="banner"] ul { margin-top: 20px;}
+nav[role="banner"] a {font-size: 1.0em; }
+/*Changes the main content to displace by 20px.*/
+main p { margin: 20px; }
+/*Changes the font color of the headers.*/
+main h2, main h3 { color: #30A195;}
+/*Uses h3 in the aside news column. Adds padding, a bottom border, a margin, and shrinks
+the default font size and change font color.*/
+aside h3 { padding-bottom: 2px;
+           border-bottom: 1px solid #000000;
+           margin: 10px;
+           font-size: 0.90em;
+		   color: #30A195; }
+/*Uses the news class to place it in the appropiate space in the aside column.*/
+.news { font-size: 0.80em;
+        margin: 10px; }
+
+/*Setting up mobile view. It is usually only for the tutorials page since that has a lot of information so its necessary
+to */
+@media only all and (max-width:768px){	
+/*Changes the header to fit for mobile view.*/
+h1{font-size:2em;}
+/*In the tutorials page, it will hide the news so more info can be shown.*/
+aside[role="tutorial"]{display:none;}
+/*Readjusts the tutorial main content so there is less whitespace.*/
+main[role="tutorial"]{margin: 0 0 0 160px;padding: 1px 10px 20px 20px;}
+}	

@@ -1,0 +1,158 @@
+<!--Index file for the mutliboot flashdrive tutorial-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DYTH Tutorial- MultiBoot FlashDrive</title>
+    <!--"../../" added to traverse parent page twice for appropriate css file-->
+    <link rel="stylesheet" href="../../maincss.css">
+    <meta charset="utf-8">
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<style>
+/*Important class changes red background to highlight.*/
+.important{background-color:#FF6699;}
+/*Make images change resolution depending on window size.*/
+img{max-width:100%;max-height:100%;}
+/*Table properties to make it more appealing to the eyes and compact.*/
+table{border-collapse:collapse;}
+td, th{	border: 1px solid #3399cc; padding: 5px}
+td{text-align:center;}
+td:nth-of-type(even){background-color:#EAEAEA;}
+</style>
+</head>
+<body>
+<div id="wrapper">
+  <header>
+    <h1>Darren Yeung's Tech Hub</h1>
+  </header>
+    <nav role="center">
+        <ul>
+            <!--"../../" added to traverse parent page twice for appropriate html files-->
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../tutorials.html">Tutorials</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="../../contact.html">Contact</a></li>
+        </ul>
+    </nav>
+  <!--Left hand banner for jumping on the tutorials page for the steps.-->
+  <nav role="banner">
+  <ul>
+    <li><a href="#intro">Introduction</a></li>
+    <li><a href="#step1">Step 1</a></li>
+    <li><a href="#step2">Step 2</a></li>
+    <li><a href="#step3">Step 3</a></li>
+    <li><a href="#step3o">Optional 3</a></li>
+    <li><a href="#step4">Step 4</a></li>
+    <li><a href="#end">Conclusion</a></li>
+    <li><br /></li>
+    <li><a href="#wrapper">Back to Top</a></li>
+   </ul>
+ </nav>
+ <aside role="tutorial">
+   <h3>NEW TUTORIAL</h3>
+   <p class="news">A new tutorial has been uploaded! Take a look when you can. It's about making a <a href="tutorials.html">MultiBoot FlashDrive</a>.</p>
+   <h3>New website created!</h3>
+   <p class="news">Welcome to the website! If you see anything that should be added or needs changing, feel free to leave a comment in the 
+        contact section or send me an email. <a href="mailto:w1432098@apps.losrios.edu">w1432098@apps.losrios.edu</a>
+   </p>
+   <h3>Enjoy Some Music:</h3>
+   <p class="news">
+       <audio controls="controls" style="width:100%;">
+           <source src="../../greg.mp3" type="audio/mp3" />
+           <source src="../../greg.ogg" type="audio/ogg" />
+       </audio>
+   </p>
+  </aside>
+  <main role="tutorial" id="intro">
+    <h2>Introduction</h2>
+    <p>
+        This how-to article will go over creating a multiple operating system flash drive so that you can install your desired
+        operating system on any PC. This is generally used to install any type of Windows or Linux distribution. We will mainly
+        be using YUMI Multiboot. There is already some good documentation for it but since it's made for Linux, someone wanting
+        a Windows multi-OS flashdrive might have some frustration. Best of all, it's free!
+    </p>
+    <p style="background-color:#99FFFF">NOTE:These instructions are for Windows PC.</p>
+    <p>To get started, we're going to need a few things:</p>
+    <ul>
+        <li>YUMI(Your Universal Multiboot Installer) Program <a href="https://www.pendrivelinux.com/downloads/YUMI/YUMI-2.0.4.9.exe" target="_blank">Download here.</a></li>
+        <li>USB Flashdrive formatted for Fat32 or NTFS (Recommended 8GB or more) </li>
+        <li>PC that boot from USB and is Windows 7/8/10 or Linux/MAC with WINE </li>
+        <li>Your selection of ISOs (image files).</li>
+    </ul>
+    <p style="background-color:#99FFFF">NOTE: If you have an installation CD and want to extract the ISO from it, learn how by using <a href="https://www.poweriso.com/tutorials/iso-extractor.htm" target="_blank">PowerISO.</a></p>
+    <p>For reference, here's a table of common ISOs people use and their file size so you can choose an appropriate sized flashdrive:</p>
+        <!--Set up table with different font and adjustable width.-->
+          <table style="width:100%;font-family:'courier new';">
+            <tr>
+                <td>Windows 7 32bit</td>
+                <td>2.5GB</td>
+                <td>Windows 7 64bit</td>
+                <td>3.2GB</td>
+                <td>Windows 10 32bit</td>
+                <td>2.8GB</td>
+            </tr>
+            <tr>
+                <td>Ubuntu 14 32bit</td>
+                <td>1.0GB</td>
+                <td>Ubuntu 14 64bit</td>
+                <td>1.0GB</td>
+                <td>Windows 10 64bit</td>
+                <td>3.8GB</td>
+            </tr>
+        </table>
+    <h2 id="step1">Step 1: Setup and Installation</h2>
+    <p>After downloading the YUMI executable file, run it. There is no need for additional installation; the executable is all you need. Make sure you have your flashdrive on hand. You can format it yourself ahead of time 
+        but the utility will have an option to format your flashdrive for you.</p>
+    <p class="important"><b>IMPORTANT:</b> Make sure you do not have any important files on your flashdrive as the flashdrive WILL get wiped.</p>
+    <h2 id="step2">Step 2: Flashdrive Setup</h2>
+    <p>Plug in your flashdrive and it should show up as a drive letter in Step 1 of YUMI. Confirm it is the right flashdrive 
+        by double-checking the size reading and drive letter. To verify the drive letter or to find out what it is, open a file
+        explorer to see what drive letter is given to your flashdrive. </p>
+    <img src="step2.jpg" alt="Step 2"/>
+    <p> Formatting the flashdrive: use either file explorer and right-click the flashdrive to reformat it to FAT32 or NTFS <b>OR</b> you can select the format options in YUMI after you selected the appropriate drive.</p>
+    <p class="important"><b>IMPORTANT:</b>At this point, this WILL wipe the flashdrive. Triple-check that there is no data that needs to be retained on the flashdrive before proceeding.</p>
+    <img src="step2a.jpg" alt="Step 2A"/>
+    <h2 id="step3">Step 3: Installing ISO Distributions</h2>
+    <p>Now you're ready to install whatever you want with whatever ISO you may have! Select your drive (it may be necessary to select "show all drives" if yours doesn't show up) and then proceed to choose what you are installing.</p>
+    <h3>For installing Windows OS:</h3>
+    <p>Select "Single Windows Vista/7/8/10 Installer".</p>
+    <img src="step3.jpg" alt="Step 3 Windows"/>
+    <p>Then proceed to click "Browse" to then find and select the ISO you would like to install.</p>
+    <img src="step3c.jpg" alt="Step 3 Next" />
+    <p>Tip: Start from the lowest/older version OS you have, then install the more recent ones since they use the same setup files and will reduce how much space used on the flashdrive. I.E. Windows 7 32bit, then Windows 7 64bit, THEN Windows 10 32bit.</p>
+    <p>Proceed when you have selected it and it should now extract on to your flashdrive. Repeat until you have all distributions you need.</p>
+    <h3>For installing Linux Distributions:</h3>
+    <p>Since YUMI is Linux based, they have listed nearly almost distribution on the list so take your time and select the proper one.</p>
+    <p>Even so, the most common Linux desktop OS is Ubuntu which can be downloaded for free here:<a href="https://www.ubuntu.com/download/desktop" target="_blank">Download.</a></p>
+    <img src="step3a.jpg" alt="Step 3 Linux"/>
+    <p>This is especially useful to those who need an operating computer without needing to buy an expensive Windows OS especially if you are building your own computer.</p>
+    <h3>For installing other ISOs:</h3>
+    <p>If the list doesn't have your ISO listed or it's some other executable ISO for other needs (such as a repair or data recovery disc) then all you need to do is select "Unlisted ISO via GRUB".</p>
+    <img src="step3b.jpg" alt="Step 3 Other"/>
+    <p>You may try out the other unlisted ISO bootloaders, but I have the best luck with GRUB.</p>
+    <h2 id="step3o">Step 3 Optional: Uninstalling ISO Distributions</h2>
+    <p>If you accidentally installed the wrong ISO, or you're running out of space, or for some other reason that requires you to uninstall a specific ISO, it's still possible to do so.</p>
+    <p>All you need to do is select the "Uninstall Mode" and it should populate a list of ISOs that are currently on your flashdrive. Select the one you want to uninstall and click "Remove".</p>
+    <img src="step3o.jpg" alt="Step 3 Optional"/>
+    <p>Tip: The storage used on the flashdrive may not change dramatically after removing the distribution so if you're dealing with the problem of not having enough space, it may be better to wipe
+        the entire flashdrive and start all over again.
+    </p>
+    <h2 id="step4">Step 4: Verify </h2>
+    <p>Now you're done! To make sure it works, go ahead and either use your PC to "boot from USB" (this is different depending on the computer's motherboard so you may have to search on how to do this) or you may use 
+        a freeware program called MobaLiveCD. Instructions can be found here:<a href="http://www.thewindowsclub.com/check-if-usb-is-bootable-windows" target="_blank">Check If USB is Bootable Windows</a> 
+    </p>
+    <h2 id="end">Conclusion</h2>
+    <p>Hope you didn't have much trouble and if you managed to get this far, congratulations! Enjoy your own personal bootable multi-OS flashdrive! This is especially useful for people who help out their friends who
+        build their own PCs or have harddrive crashes that they need to get back to business as soon as possible or for some who just want an upgrade while being frugal and not carrying a bunch of installation discs. 
+        I hope you enjoyed this tutorial and if you find any errors or have some comments or criticism, feel free to message me or click on the "Contact" button in the navigation bar. Enjoy!
+    </p>
+    <br /><br /><br />
+    <p><a href="../../contact.html">Leave a comment!</a></p>
+  </main>
+    <footer> Copyright &copy; 2017 Darren Yeung<br />Created:5/8/17 | Modified:5/8/17<br /><a href="mailto:w1432098@apps.losrios.edu">w1432098@apps.losrios.edu</a>
+    </footer>
+</div> 
+</body>
+</html>

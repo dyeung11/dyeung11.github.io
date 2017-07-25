@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DYTH - Contact</title>
+    <link rel="stylesheet" href="maincss.css">
+    <meta charset="utf-8">
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+</head>
+<body>
+<div id="wrapper">
+  <header>
+    <h1>Darren Yeung's Tech Hub</h1>
+  </header>
+    <nav role="center">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tutorials.html">Tutorials</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+  <main role="contact">
+    <h2>Contact:</h2>
+      <!--Send the form results to email.-->
+        <form method="post" action="mailto:w1432098@apps.losrios.edu">
+            <label for="myFName">First Name:</label>
+            <input type="text" name="myFName" id="myFName" required="required">
+            <label for="myLName">Last Name:</label>
+            <input type="text" name="myLName" id="myLName" required="required">
+            <label for="myEmail">E-mail:</label>
+            <input type="email" name="myEmail" id="myEmail" required="required">
+            <label for="myComments">Comments:</label>
+            <textarea name="myComments" id="myComments" rows="2" cols="20" required="required"></textarea>
+            <input id="mySubmit" type="submit" value="Submit">
+        </form>
+  </main>
+    <footer> Copyright &copy; 2017 Darren Yeung<br />Created:5/8/17 | Modified:5/8/17<br /><a href="mailto:w1432098@apps.losrios.edu">w1432098@apps.losrios.edu</a>
+    </footer>
+</div> 
+</body>
+</html>

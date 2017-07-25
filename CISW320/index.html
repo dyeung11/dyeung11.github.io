@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DYTH - Main Page</title>
+    <!--CSS file used for all webpages is a single, external css file named maincss.css-->
+    <link rel="stylesheet" href="maincss.css">
+    <meta charset="utf-8">
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+</head>
+<body>
+<div id="wrapper">
+  <header>
+  <h1>Darren Yeung's Tech Hub</h1>
+  </header>
+    <!--Navigator persistent through all webpages.-->
+    <nav role="center">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tutorials.html">Tutorials</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+<!--Aside class for the right side news for the webpage.
+    It includes news, external links, and a music player.
+    It is hidden during the contact page or when the tutorial page
+    is view on mobile.-->
+ <aside>
+   <h3>NEW TUTORIAL</h3>
+   <p class="news">A new tutorial has been uploaded! Take a look when you can. It's about making a <a href="tutorials.html">MultiBoot FlashDrive</a>.</p>
+   <h3>New website created!</h3>
+   <p class="news">Welcome to the website! If you see anything that should be added or needs changing, feel free to leave a comment in the 
+        contact section or send me an email. <a href="mailto:w1432098@apps.losrios.edu">w1432098@apps.losrios.edu</a>
+   </p>
+   <h3>Enjoy Some Music:</h3>
+    <!--Embedded music player. Unfortunately because it's small, it's not possible to adjust volume but still able to mute or play.-->
+   <p class="news">
+       <audio controls="controls" style="width:100%;">
+           <source src="greg.mp3" type="audio/mp3" />
+           <source src="greg.ogg" type="audio/ogg" />
+       </audio>
+   </p>
+  </aside>
+  <main>
+    <h2>Welcome!</h2>
+    <p>Hello! Welcomes to Darren Yeung's Tech Hub- a place where I collect all of my experience in the tech field. None of it is professional work and is mainly just as 
+        a hobby, but these skills can be applied in employment and personal benefit. If you have any suggestions for a tutorial, please feel free to email me or leave a comment
+        in the contact section. Thank you and hope to see you again! 
+    </p>
+    <h2>Tech Industry</h2>
+    <p>Interested in tech? Take a brief look at Treehouse's vidoe of "Who does What in the Tech Industry" to know more about the tech around us and how we can
+        be a part of it. Tons of resources are out there available for us to learn. Try it out!
+    </p>
+      <!--Embedded youtube video-->
+    <iframe src="https://www.youtube.com/embed/i5qpS_D8Law?controls=1" allowfullscreen></iframe>
+  </main>
+    <!--Footer found at the end of the page of every -->
+    <footer> Copyright &copy; 2017 Darren Yeung<br />Created:5/8/17 | Modified:5/8/17<br /><a href="mailto:w1432098@apps.losrios.edu">w1432098@apps.losrios.edu</a>
+    </footer>
+</div> 
+</body>
+</html>
